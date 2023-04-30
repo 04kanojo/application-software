@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.EnergyEfficiencyMapper">
+
+    <resultMap id="BaseResultMap" type="com.kanojo.domain.EnergyEfficiency">
+        <id property="number" column="number" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="address" column="address" jdbcType="VARCHAR"/>
+        <result property="voltage" column="voltage" jdbcType="VARCHAR"/>
+        <result property="power" column="power" jdbcType="VARCHAR"/>
+        <result property="status" column="status" jdbcType="INTEGER"/>
+        <result property="reportTime" column="report_time" jdbcType="TIMESTAMP"/>
+        <result property="note" column="note" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <update id="update">
+        update energy_efficiency set
+        <if test="name != null">name = #{name}</if>
+        <if test="address != null">address = #{address}</if>
+        <if test="voltage != null">voltage = #{voltage}</if>
+        <if test="power != null">power = #{power}</if>
+        <if test="status != null">status = #{status}</if>
+        <if test="reportTime != null">report_time = #{reporTime}</if>
+        <if test="note != null">note = #{note}</if>
+        where number = #{number};
+    </update>
+
+    <select id="getByCondition" resultType="com.kanojo.domain.EnergyEfficiency">
+        select * from energy_efficiency
+        <where>
+            <if test="name != null">name = #{name}</if>
+            <if test="address != null">address = #{address}</if>
+            <if test="status">status = #{status}</if>
+        </where>
+    </select>
+</mapper>
