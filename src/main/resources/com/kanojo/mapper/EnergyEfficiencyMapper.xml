@@ -17,22 +17,22 @@
 
     <update id="update">
         update energy_efficiency set
-        <if test="name != null">name = #{name}</if>
-        <if test="address != null">address = #{address}</if>
-        <if test="voltage != null">voltage = #{voltage}</if>
-        <if test="power != null">power = #{power}</if>
-        <if test="status != null">status = #{status}</if>
-        <if test="reportTime != null">report_time = #{reporTime}</if>
-        <if test="note != null">note = #{note}</if>
+        <if test="name != null">and name = #{name}</if>
+        <if test="address != null">and address = #{address}</if>
+        <if test="voltage != null">and voltage = #{voltage}</if>
+        <if test="power != null">and power = #{power}</if>
+        <if test="status != null">and status = #{status}</if>
+        <if test="reportTime != null">and report_time = #{reporTime}</if>
+        <if test="note != null">and note = #{note}</if>
         where number = #{number};
     </update>
 
     <select id="getByCondition" resultType="com.kanojo.domain.EnergyEfficiency">
         select * from energy_efficiency
         <where>
-            <if test="name != null">name = #{name}</if>
-            <if test="address != null">address = #{address}</if>
-            <if test="status">status = #{status}</if>
+            <if test="name != null">and name = #{name}</if>
+            <if test="address != null">and address = #{address}</if>
+            <if test="status">and status = #{status}</if>
         </where>
     </select>
 </mapper>

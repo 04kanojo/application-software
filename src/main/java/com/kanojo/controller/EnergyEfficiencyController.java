@@ -1,8 +1,8 @@
 package com.kanojo.controller;
 
 import com.kanojo.common.result.Result;
-import com.kanojo.domain.ConditionParam;
 import com.kanojo.domain.EnergyEfficiency;
+import com.kanojo.domain.param.EE_ConditionParam;
 import com.kanojo.service.EnergyEfficiencyService;
 import org.springframework.web.bind.annotation.*;
 
@@ -20,7 +20,7 @@ public class EnergyEfficiencyController {
     public Result getAll() {
         List<EnergyEfficiency> list = energyEfficiencyService.getAll();
         boolean flag = list.size() != 0;
-        return flag ? Result.success(list) : Result.failed();
+        return flag ? Result.success(list) : Result.success(null, "暂无数据");
     }
 
     @PutMapping("/update")
@@ -36,10 +36,10 @@ public class EnergyEfficiencyController {
     }
 
     @PostMapping("/getByCondition")
-    public Result getByCondition(@RequestBody ConditionParam conditionParam) {
-        List<EnergyEfficiency> list = energyEfficiencyService.getByCondition(conditionParam);
+    public Result getByCondition(@RequestBody EE_ConditionParam EEConditionParam) {
+        List<EnergyEfficiency> list = energyEfficiencyService.getByCondition(EEConditionParam);
         boolean flag = list.size() != 0;
-        return flag ? Result.success(list) : Result.failed();
+        return flag ? Result.success(list) : Result.success(null, "暂无数据");
     }
 
     @PostMapping("/add")

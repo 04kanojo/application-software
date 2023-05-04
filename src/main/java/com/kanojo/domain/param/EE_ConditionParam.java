@@ -1,4 +1,4 @@
-package com.kanojo.domain;
+package com.kanojo.domain.param;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -7,7 +7,7 @@ import lombok.NoArgsConstructor;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class ConditionParam {
+public class EE_ConditionParam {
     private String name;
 
     private String address;

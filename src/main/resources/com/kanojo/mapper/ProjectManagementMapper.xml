@@ -14,9 +14,13 @@
         <result property="projectIntroduction" column="project_introduction" jdbcType="VARCHAR"/>
     </resultMap>
 
-    <sql id="Base_Column_List">
-        number,project_name,responsible_person,
-        start_time,end_time,status,
-        project_introduction
-    </sql>
+    <select id="selectByCondition" resultType="com.kanojo.domain.ProjectManagement">
+        select * from project_management
+        <where>
+            <if test="projectName != null">and project_name = #{projectName}</if>
+            <if test="status != null">and status = #{status}</if>
+            <if test="startTime != null">and start_time &gt;= #{startTime}</if>
+            <if test="endTime != null">and end_time &lt;= #{endTime}</if>
+        </where>
+    </select>
 </mapper>
