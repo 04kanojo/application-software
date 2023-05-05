@@ -22,8 +22,8 @@ public interface EnergyEfficiencyMapper {
 
     List<EnergyEfficiency> getByCondition(EE_ConditionParam EEConditionParam);
 
-    @Insert("insert into energy_efficiency (name, address, voltage, power, report_time, note) " +
-            "values (#{name},#{address},#{voltage},#{power},#{reportTime},#{note})")
+    @Insert("insert into energy_efficiency (name, address, voltage, power, note) " +
+            "values (#{name},#{address},#{voltage},#{power},#{note})")
     boolean add(EnergyEfficiency energyEfficiency);
 }
 

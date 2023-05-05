@@ -14,4 +14,6 @@ public interface ProjectManagementService {
     List<ProjectManagement> getByCondition(PM_ConditionParam param);
 
     boolean add(ProjectManagement projectManagement);
+
+    boolean update(ProjectManagement projectManagement);
 }

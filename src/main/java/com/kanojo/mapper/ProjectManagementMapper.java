@@ -21,6 +21,8 @@ public interface ProjectManagementMapper {
     List<ProjectManagement> selectByCondition(PM_ConditionParam param);
 
     @Insert("insert into project_management (project_name, responsible_person, start_time, end_time, status, project_introduction) " +
-            "values (#{project_name},#{responsiblePerson},#{startTime},#{endTime},#{status},#{projectIntroduction})")
+            "values (#{projectName},#{responsiblePerson},#{startTime},#{endTime},#{status},#{projectIntroduction})")
     Integer add(ProjectManagement projectManagement);
+
+    Integer update(ProjectManagement projectManagement);
 }

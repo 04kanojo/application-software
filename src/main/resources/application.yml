@@ -2,6 +2,7 @@ server:
   port: 8081
 
 spring:
+
   datasource: #数据库配置
     url: jdbc:mysql://124.223.63.101:3306/carbon?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -10,10 +11,9 @@ spring:
     type: com.alibaba.druid.pool.DruidDataSource
 
   #返回json的全局时间格式
-#  jackson:
-#    time-zone: GMT+8
-#    date-format: yyyy-MM-dd HH:mm:ss
-
+  jackson:
+    date-format: yyyy-MM-dd HH:mm:ss
+    time-zone: GMT+8
 
 mybatis:
   configuration:

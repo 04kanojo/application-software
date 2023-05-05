@@ -27,11 +27,17 @@ public class ProjectManagementServiceImpl implements ProjectManagementService {
 
     @Override
     public List<ProjectManagement> getByCondition(PM_ConditionParam param) {
+        param.setProjectName("%" + param.getProjectName() + "%");
         return projectManagementMapper.selectByCondition(param);
     }
 
     @Override
     public boolean add(ProjectManagement projectManagement) {
         return projectManagementMapper.add(projectManagement) > 0;
+    }
+
+    @Override
+    public boolean update(ProjectManagement projectManagement) {
+        return projectManagementMapper.update(projectManagement) > 0;
     }
 }

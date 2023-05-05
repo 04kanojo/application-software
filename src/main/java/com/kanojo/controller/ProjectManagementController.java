@@ -61,4 +61,10 @@ public class ProjectManagementController {
         boolean flag = projectManagementService.add(projectManagement);
         return flag ? Result.success() : Result.failed();
     }
+
+    @PostMapping("/update")
+    public Result update(@RequestBody ProjectManagement projectManagement) {
+        boolean flag = projectManagementService.update(projectManagement);
+        return flag ? Result.success() : Result.failed();
+    }
 }
