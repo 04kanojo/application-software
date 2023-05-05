@@ -12,4 +12,6 @@ public interface ProjectManagementService {
     boolean delete(Long number);
 
     List<ProjectManagement> getByCondition(PM_ConditionParam param);
+
+    boolean add(ProjectManagement projectManagement);
 }

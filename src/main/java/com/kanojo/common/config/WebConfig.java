@@ -6,6 +6,7 @@ import org.springframework.web.cors.CorsConfiguration;
 import org.springframework.web.cors.UrlBasedCorsConfigurationSource;
 import org.springframework.web.filter.CorsFilter;
 import org.springframework.web.servlet.config.annotation.EnableWebMvc;
+import org.springframework.web.servlet.config.annotation.ResourceHandlerRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @Configuration
@@ -32,5 +33,13 @@ public class WebConfig implements WebMvcConfigurer {
         corsConfigurationSource.registerCorsConfiguration("/**", config);
         //返回CorsFilter
         return new CorsFilter(corsConfigurationSource);
+    }
+
+    @Override
+    public void addResourceHandlers(ResourceHandlerRegistry registry) {
+        //访问路径
+        registry.addResourceHandler("/picture/**")
+                //映射路径
+                .addResourceLocations("file:D:\\Temp/");
     }
 }
