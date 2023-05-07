@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.yi.ProcessModelMapper">
+    <update id="update">
+        update process_model set
+        <if test="product != null">product = #{product},</if>
+        <if test="processName != null">process_name = #{processName},</if>
+        <if test="unitPower != null">unit_power = #{unitPower},</if>
+        <if test="info != null">info = #{info},</if>
+        <if test="note != null">note = #{note}</if>
+        where number = #{number};
+    </update>
+</mapper>

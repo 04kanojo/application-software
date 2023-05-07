@@ -2,7 +2,7 @@
 <!DOCTYPE mapper
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.kanojo.mapper.ProjectManagementMapper">
+<mapper namespace="com.kanojo.mapper.yi.ProjectManagementMapper">
 
     <update id="update">
         update project_management set
@@ -15,7 +15,7 @@
         where number = #{number};
     </update>
 
-    <select id="selectByCondition" resultType="com.kanojo.domain.ProjectManagement">
+    <select id="selectByCondition" resultType="com.kanojo.domain.yi.ProjectManagement">
         select * from project_management
         <where>
             <if test="projectName != null">and project_name like #{projectName}</if>
