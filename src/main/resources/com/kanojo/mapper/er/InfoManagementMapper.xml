@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.er.InfoManagementMapper">
+    <update id="update">
+        update info_management set
+        <if test="name != null">name = #{name},</if>
+        <if test="code != null">code = #{code},</if>
+        <if test="modelNumber != null">model_number = #{modelNumber},</if>
+        <if test="batch != null">batch = #{batch},</if>
+        <if test="manufacturer != null">manufacturer = #{manufacturer},</if>
+        <if test="status != null">status = #{status},</if>
+        <if test="note != null">note = #{note},</if>
+        <if test="createTime != null">create_time = #{createTime}</if>
+        where id = #{id};
+    </update>
+
+    <select id="getByCo" resultType="com.kanojo.domain.er.InfoManagement">
+        select * from info_management
+        <where>
+            <if test="name != null">name = #{name}</if>
+            <if test="code != null">and code = #{code}</if>
+            <if test="modelNumber != null">and model_number = #{modelNumber}</if>
+            <if test="batch != null">and batch = #{batch}</if>
+            <if test="manufacturer != null">and manufacturer = #{manufacturer}</if>
+            <if test="status != null">and status = #{status}</if>
+            <if test="startTime != null">and create_time &gt;= #{startTime}</if>
+            <if test="endTime != null">and create_time &lt;= #{endTime}</if>
+        </where>
+    </select>
+</mapper>

@@ -8,7 +8,7 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @NoArgsConstructor
 public class PageParam {
-    private Integer cur = 1;
+    private Integer cur = 0;
 
     private Integer size = 5;
 }

@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.er.ComplaintMapper">
+    <update id="update">
+        update complaint set
+        <if test="title != null">title = #{title},</if>
+        <if test="info != null">info = #{info},</if>
+        <if test="people != null">people = #{people},</if>
+        <if test="phone != null">phone = #{phone},</if>
+        <if test="enable != null">enable = #{enable}</if>
+        where id = #{id};
+    </update>
+</mapper>

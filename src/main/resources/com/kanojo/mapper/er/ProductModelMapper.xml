@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.er.ProductModelMapper">
+    <update id="update">
+        update product_model set
+        <if test="product != null">product = #{product},</if>
+        <if test="name != null">name = #{name},</if>
+        <if test="note != null">note = #{note}</if>
+        where id = #{id};
+    </update>
+</mapper>
