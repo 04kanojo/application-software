@@ -24,4 +24,19 @@ public class ProductInspectionServiceImpl implements ProductInspectionService {
     public boolean update(ProductInspection productInspection) {
         return mapper.update(productInspection);
     }
+
+    @Override
+    public ProductInspection getById(Long id) {
+        return mapper.getById(id);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        return mapper.delete(id);
+    }
+
+    @Override
+    public boolean add(ProductInspection productInspection) {
+        return mapper.add(productInspection);
+    }
 }

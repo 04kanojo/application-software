@@ -10,4 +10,10 @@ public interface ProductInspectionService {
     List<ProductInspection> list(ProductInspectionParam param);
 
     boolean update(ProductInspection productInspection);
+
+    ProductInspection getById(Long id);
+
+    boolean delete(Long id);
+
+    boolean add(ProductInspection productInspection);
 }
