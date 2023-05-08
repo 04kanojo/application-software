@@ -8,4 +8,6 @@ import java.util.List;
 public interface ProductInspectionService {
 
     List<ProductInspection> list(ProductInspectionParam param);
+
+    boolean update(ProductInspection productInspection);
 }

@@ -12,8 +12,8 @@ public interface ComplaintMapper {
     @Select("select * from complaint")
     List<Complaint> list();
 
-    @Insert("insert into complaint (icon, title, create_time, status, info, file, result, people, phone) " +
-            "values (#{icon}, #{title},#{createTime}, #{status}, #{info},#{file}, #{result}, #{people},#{phone});")
+    @Insert("insert into complaint (icon, title, status, info, file, result, people, phone,enable) " +
+            "values (#{icon}, #{title}, #{status}, #{info},#{file}, #{result}, #{people},#{phone},#{enable});")
     boolean add(Complaint complaint);
 
     boolean update(Complaint complaint);

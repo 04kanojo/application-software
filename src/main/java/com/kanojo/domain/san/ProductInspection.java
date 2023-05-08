@@ -1,5 +1,6 @@
 package com.kanojo.domain.san;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -25,6 +26,7 @@ public class ProductInspection implements Serializable {
 
     private String productName;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date createTime;
 
     private String checkout;
@@ -41,6 +43,7 @@ public class ProductInspection implements Serializable {
 
     private String checkoutResult;
 
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss")
     private Date checkoutTime;
 
     private String note;
@@ -48,4 +51,6 @@ public class ProductInspection implements Serializable {
     private static final long serialVersionUID = 1L;
 
     private String checkoutPeople;
+
+    private String checkoutStandard;
 }

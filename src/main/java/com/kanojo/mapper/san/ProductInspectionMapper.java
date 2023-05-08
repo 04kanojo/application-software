@@ -11,4 +11,6 @@ public interface ProductInspectionMapper {
 
 
     List<ProductInspection> list(ProductInspectionParam param);
+
+    boolean update(ProductInspection productInspection);
 }

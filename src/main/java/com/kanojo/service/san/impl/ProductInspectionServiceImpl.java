@@ -19,4 +19,9 @@ public class ProductInspectionServiceImpl implements ProductInspectionService {
     public List<ProductInspection> list(ProductInspectionParam param) {
         return mapper.list(param);
     }
+
+    @Override
+    public boolean update(ProductInspection productInspection) {
+        return mapper.update(productInspection);
+    }
 }

@@ -4,4 +4,33 @@
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kanojo.mapper.san.ProductInspectionMapper">
 
+    <select id="list" resultType="com.kanojo.domain.san.ProductInspection">
+        select * from product_inspection
+        <where>
+            <if test="number != null">number = #{number}</if>
+            <if test="orderNumber != null">and order_number = #{orderNumber}</if>
+            <if test="planNumber != null">and plan_number = #{planNumber}</if>
+            <if test="homewordName != null">and homeword_name = #{homewordName}</if>
+            <if test="productName != null">and product_name = #{productName}</if>
+            <if test="batch != null">and batch = #{batch}</if>
+            <if test="productionStartTime != null">and create_time &gt;= #{productionStartTime}</if>
+            <if test="productionEndTime != null">and create_time &lt;= #{productionEndTime}</if>
+            <if test="checkout != null">and checkout = #{checkout}</if>
+            <if test="checkoutResult != null">and checkout_result = #{checkoutResult}</if>
+            <if test="checkoutStartTime != null">and checkout_time &gt;= #{checkoutStartTime}</if>
+            <if test="checkoutEndTime != null">and checkout_time &lt;= #{productionEndTime}</if>
+            <if test="checkoutPeople != null">and checkout_people = #{checkoutPeople}</if>
+        </where>
+    </select>
+
+    <update id="update">
+        update product_inspection set
+        <if test="orderNumber != null">order_number = #{orderNumber},</if>
+        <if test="checkoutStandard != null">checkout_standard = #{checkoutStandard},</if>
+        <if test="randomInspectionNumber != null">random_inspection_number = #{randomInspectionNumber},</if>
+        <if test="verificationValue != null">verification_value = #{verificationValue},</if>
+        <if test="checkoutResult != null">checkout_result = #{checkoutResult},</if>
+        <if test="note != null">note = #{note}</if>
+        where id = #{id};
+    </update>
 </mapper>
