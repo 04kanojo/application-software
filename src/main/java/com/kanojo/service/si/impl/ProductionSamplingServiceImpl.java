@@ -20,4 +20,19 @@ public class ProductionSamplingServiceImpl implements ProductionSamplingService 
         productionSampling.setCheckoutPeople("%" + productionSampling.getCheckoutPeople() + "%");
         return mapper.list(productionSampling);
     }
+
+    @Override
+    public boolean update(ProductionSampling productionSampling) {
+        return mapper.update(productionSampling);
+    }
+
+    @Override
+    public ProductionSampling getById(Long id) {
+        return mapper.geyById(id);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        return mapper.delete(id);
+    }
 }

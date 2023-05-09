@@ -17,4 +17,16 @@
             <if test="endTime != null">and checkout_time &lt;= #{endTime}</if>
         </where>
     </select>
+
+    <update id="update">
+        update production_sampling set
+        <if test="homeworkName">homework_name = #{homeworkName},</if>
+        <if test="materialName">material_name = #{materialName},</if>
+        <if test="samplingNumber">sampling_number = #{samplingNumber},</if>
+        <if test="checkoutStandard">checkout_standard = #{checkoutStandard},</if>
+        <if test="checkoutValue">checkout_value = #{checkoutValue},</if>
+        <if test="checkoutResult">checkout_result = #{checkoutResult},</if>
+        <if test="note">note = #{note}</if>
+        where id = #{id};
+    </update>
 </mapper>
