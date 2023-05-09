@@ -35,4 +35,9 @@ public class ProductionSamplingServiceImpl implements ProductionSamplingService 
     public boolean delete(Long id) {
         return mapper.delete(id);
     }
+
+    @Override
+    public boolean add(ProductionSampling productionSampling) {
+        return mapper.add(productionSampling);
+    }
 }

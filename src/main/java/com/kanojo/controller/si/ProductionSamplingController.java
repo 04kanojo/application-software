@@ -32,4 +32,9 @@ public class ProductionSamplingController {
     public Result delete(@PathVariable Long id) {
         return service.delete(id) ? Result.success() : Result.failed();
     }
+
+    @PostMapping("/add")
+    public Result add(@RequestBody ProductionSampling productionSampling) {
+        return service.add(productionSampling) ? Result.success() : Result.failed();
+    }
 }

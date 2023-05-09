@@ -13,4 +13,6 @@ public interface ProductionSamplingService {
     ProductionSampling getById(Long id);
 
     boolean delete(Long id);
+
+    boolean add(ProductionSampling productionSampling);
 }
