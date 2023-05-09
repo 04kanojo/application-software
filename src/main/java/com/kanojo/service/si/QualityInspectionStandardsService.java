@@ -6,4 +6,6 @@ import java.util.List;
 
 public interface QualityInspectionStandardsService {
     List<QualityInspectionStandards> list(QualityInspectionStandards qualityInspectionStandards);
+
+    boolean update(QualityInspectionStandards qualityInspectionStandards);
 }

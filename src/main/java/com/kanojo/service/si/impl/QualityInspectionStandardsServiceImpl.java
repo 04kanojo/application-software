@@ -18,4 +18,9 @@ public class QualityInspectionStandardsServiceImpl implements QualityInspectionS
         qualityInspectionStandards.setName("%" + qualityInspectionStandards.getName() + "%");
         return mapper.list(qualityInspectionStandards);
     }
+
+    @Override
+    public boolean update(QualityInspectionStandards qualityInspectionStandards) {
+        return mapper.update(qualityInspectionStandards);
+    }
 }

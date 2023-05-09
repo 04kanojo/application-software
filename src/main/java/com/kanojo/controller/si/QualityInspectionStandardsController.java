@@ -20,4 +20,9 @@ public class QualityInspectionStandardsController {
     public Result list(@RequestBody(required = false) QualityInspectionStandards qualityInspectionStandards) {
         return Result.success(service.list(qualityInspectionStandards));
     }
+
+    @PostMapping("/update")
+    public Result update(@RequestBody QualityInspectionStandards qualityInspectionStandards) {
+        return service.update(qualityInspectionStandards) ? Result.success() : Result.failed();
+    }
 }

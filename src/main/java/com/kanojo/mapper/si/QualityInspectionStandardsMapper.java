@@ -8,4 +8,6 @@ public interface QualityInspectionStandardsMapper {
 
 
     List<QualityInspectionStandards> list(QualityInspectionStandards qualityInspectionStandards);
+
+    boolean update(QualityInspectionStandards qualityInspectionStandards);
 }

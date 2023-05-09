@@ -11,4 +11,14 @@
             <if test="checkoutType != null">and checkout_type = #{checkoutType}</if>
         </where>
     </select>
+
+    <update id="update">
+        update quality_inspection_standards set
+        <if test="name != null">name = #{name},</if>
+        <if test="checkoutType != null">checkout_type = #{checkoutType},</if>
+        <if test="standardValueUp != null">standard_value_up = #{standardValueUp},</if>
+        <if test="standardValueDown != null">standard_value_down = #{standardValueDown},</if>
+        <if test="note != null">note = #{note}</if>
+        where id = #{id};
+    </update>
 </mapper>
