@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.san.EnterpriseMapper">
+
+    <resultMap id="BaseResultMap" type="com.kanojo.domain.san.Enterprise">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="code" column="code" jdbcType="INTEGER"/>
+        <result property="registerAddress" column="register_address" jdbcType="VARCHAR"/>
+        <result property="organizationType" column="organization_type" jdbcType="VARCHAR"/>
+        <result property="properties" column="properties" jdbcType="VARCHAR"/>
+        <result property="createTime" column="create_time" jdbcType="TIMESTAMP"/>
+        <result property="legalPerson" column="legal_person" jdbcType="VARCHAR"/>
+        <result property="idCard" column="id_card" jdbcType="VARCHAR"/>
+        <result property="unitAddress" column="unit_address" jdbcType="VARCHAR"/>
+        <result property="management
+Scope" column="management
+_scope" jdbcType="VARCHAR"/>
+        <result property="info" column="info" jdbcType="VARCHAR"/>
+        <result property="businessLicense" column="business_license" jdbcType="VARCHAR"/>
+        <result property="businessLicenseExpiration" column="business_license_expiration" jdbcType="TIMESTAMP"/>
+        <result property="idCardScannedCopy" column="id_card_scanned_copy" jdbcType="VARCHAR"/>
+        <result property="accountBank" column="account_bank" jdbcType="VARCHAR"/>
+        <result property="bankCard" column="bank_card" jdbcType="VARCHAR"/>
+        <result property="accountBankAddress" column="account_bank_address" jdbcType="VARCHAR"/>
+        <result property="unitRegisterPhone" column="unit_register_phone" jdbcType="VARCHAR"/>
+        <result property="unitRegisterAddress" column="unit_register_address" jdbcType="VARCHAR"/>
+        <result property="registerMoney" column="register_money" jdbcType="INTEGER"/>
+        <result property="paidInMoney" column="paid_in_money" jdbcType="INTEGER"/>
+        <result property="license" column="License" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,name,code,
+        register_address,organization_type,properties,
+        create_time,legal_person,id_card,
+        unit_address,management
+_scope,info,
+        business_license,business_license_expiration,id_card_scanned_copy,
+        account_bank,bank_card,account_bank_address,
+        unit_register_phone,unit_register_address,register_money,
+        paid_in_money,License
+    </sql>
+</mapper>
