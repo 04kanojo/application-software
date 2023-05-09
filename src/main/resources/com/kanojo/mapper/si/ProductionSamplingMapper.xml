@@ -3,34 +3,18 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.kanojo.mapper.si.ProductionSamplingMapper">
-
-    <resultMap id="BaseResultMap" type="com.kanojo.domain.si.ProductionSampling">
-        <id property="id" column="id" jdbcType="BIGINT"/>
-        <result property="number" column="number" jdbcType="INTEGER"/>
-        <result property="waterNumber" column="water_number" jdbcType="INTEGER"/>
-        <result property="planNumber" column="plan_number" jdbcType="INTEGER"/>
-        <result property="homeworkName" column="homework_name" jdbcType="VARCHAR"/>
-        <result property="materialName" column="material_name" jdbcType="VARCHAR"/>
-        <result property="specification" column="specification" jdbcType="VARCHAR"/>
-        <result property="modelNumber" column="model_number" jdbcType="INTEGER"/>
-        <result property="unit" column="unit" jdbcType="VARCHAR"/>
-        <result property="checkout" column="checkout" jdbcType="VARCHAR"/>
-        <result property="productionNumber" column="production_number" jdbcType="INTEGER"/>
-        <result property="samplingNumber" column="sampling_number" jdbcType="INTEGER"/>
-        <result property="checkoutValue" column="checkout_value" jdbcType="VARCHAR"/>
-        <result property="thresholdValueUp" column="threshold_value_up" jdbcType="INTEGER"/>
-        <result property="thresholdValueDown" column="threshold_value_down" jdbcType="INTEGER"/>
-        <result property="checkoutPeople" column="checkout_people" jdbcType="VARCHAR"/>
-        <result property="checkoutTime" column="checkout_time" jdbcType="TIMESTAMP"/>
-        <result property="note" column="note" jdbcType="VARCHAR"/>
-    </resultMap>
-
-    <sql id="Base_Column_List">
-        id,number,water_number,
-        plan_number,homework_name,material_name,
-        specification,model_number,unit,
-        checkout,production_number,sampling_number,
-        checkout_value,threshold_value_up,threshold_value_down,
-        checkout_people,checkout_time,note
-    </sql>
+    <select id="list" resultType="com.kanojo.domain.si.ProductionSampling">
+        select * from production_sampling
+        <where>
+            <if test="waterNumber != null">water_number = #{waterNumber}</if>
+            <if test="planNumber != null">and plan_number = #{planNumber}</if>
+            <if test="homeworkName != null">and homework_name like #{homeworkName}</if>
+            <if test="materialName != null">and material_name like #{materialName}</if>
+            <if test="checkout != null">and checkout = #{checkout}</if>
+            <if test="checkoutResult != null">and checkout_result = #{checkoutResult}</if>
+            <if test="checkoutPeople != null">and checkout_people like #{checkoutPeople}</if>
+            <if test="checkoutTime != null">and checkout_time &gt;= #{checkoutTime}</if>
+            <if test="endTime != null">and checkout_time &lt;= #{endTime}</if>
+        </where>
+    </select>
 </mapper>

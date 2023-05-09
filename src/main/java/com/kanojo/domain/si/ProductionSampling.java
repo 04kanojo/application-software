@@ -1,5 +1,6 @@
 package com.kanojo.domain.si;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -90,12 +91,18 @@ public class ProductionSampling implements Serializable {
     /**
      *
      */
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
     private Date checkoutTime;
 
     /**
      *
      */
     private String note;
+
+    private String checkoutResult;
+
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "GMT+8")
+    private Date endTime;
 
     private static final long serialVersionUID = 1L;
 }
