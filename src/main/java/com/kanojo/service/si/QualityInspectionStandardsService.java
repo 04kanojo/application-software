@@ -8,4 +8,10 @@ public interface QualityInspectionStandardsService {
     List<QualityInspectionStandards> list(QualityInspectionStandards qualityInspectionStandards);
 
     boolean update(QualityInspectionStandards qualityInspectionStandards);
+
+    List<QualityInspectionStandards> getById(Long id);
+
+    boolean delete(Long id);
+
+    boolean add(QualityInspectionStandards qualityInspectionStandards);
 }

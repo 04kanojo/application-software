@@ -23,4 +23,19 @@ public class QualityInspectionStandardsServiceImpl implements QualityInspectionS
     public boolean update(QualityInspectionStandards qualityInspectionStandards) {
         return mapper.update(qualityInspectionStandards);
     }
+
+    @Override
+    public List<QualityInspectionStandards> getById(Long id) {
+        return mapper.getById(id);
+    }
+
+    @Override
+    public boolean delete(Long id) {
+        return mapper.delete(id);
+    }
+
+    @Override
+    public boolean add(QualityInspectionStandards qualityInspectionStandards) {
+        return mapper.add(qualityInspectionStandards);
+    }
 }

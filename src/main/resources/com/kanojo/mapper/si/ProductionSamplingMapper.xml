@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.si.ProductionSamplingMapper">
+
+    <resultMap id="BaseResultMap" type="com.kanojo.domain.si.ProductionSampling">
+        <id property="id" column="id" jdbcType="BIGINT"/>
+        <result property="number" column="number" jdbcType="INTEGER"/>
+        <result property="waterNumber" column="water_number" jdbcType="INTEGER"/>
+        <result property="planNumber" column="plan_number" jdbcType="INTEGER"/>
+        <result property="homeworkName" column="homework_name" jdbcType="VARCHAR"/>
+        <result property="materialName" column="material_name" jdbcType="VARCHAR"/>
+        <result property="specification" column="specification" jdbcType="VARCHAR"/>
+        <result property="modelNumber" column="model_number" jdbcType="INTEGER"/>
+        <result property="unit" column="unit" jdbcType="VARCHAR"/>
+        <result property="checkout" column="checkout" jdbcType="VARCHAR"/>
+        <result property="productionNumber" column="production_number" jdbcType="INTEGER"/>
+        <result property="samplingNumber" column="sampling_number" jdbcType="INTEGER"/>
+        <result property="checkoutValue" column="checkout_value" jdbcType="VARCHAR"/>
+        <result property="thresholdValueUp" column="threshold_value_up" jdbcType="INTEGER"/>
+        <result property="thresholdValueDown" column="threshold_value_down" jdbcType="INTEGER"/>
+        <result property="checkoutPeople" column="checkout_people" jdbcType="VARCHAR"/>
+        <result property="checkoutTime" column="checkout_time" jdbcType="TIMESTAMP"/>
+        <result property="note" column="note" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <sql id="Base_Column_List">
+        id,number,water_number,
+        plan_number,homework_name,material_name,
+        specification,model_number,unit,
+        checkout,production_number,sampling_number,
+        checkout_value,threshold_value_up,threshold_value_down,
+        checkout_people,checkout_time,note
+    </sql>
+</mapper>
