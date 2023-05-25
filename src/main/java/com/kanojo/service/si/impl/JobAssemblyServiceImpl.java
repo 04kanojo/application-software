@@ -17,7 +17,9 @@ public class JobAssemblyServiceImpl implements JobAssemblyService {
 
     @Override
     public List<JobAssembly> list(JobAssemblyParam param) {
-        param.setName("%" + param.getName() + "%");
+        if  (param != null && param.getName() != null) {
+            param.setName("%" + param.getName() + "%");
+        }
         return mapper.list(param);
     }
 
