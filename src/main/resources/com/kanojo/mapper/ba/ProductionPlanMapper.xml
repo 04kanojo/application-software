@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.ba.ProductionPlanMapper">
+    <select id="getAll" resultType="com.kanojo.domain.ba.ProductionPlan">
+        select * from production_plan
+        <where>
+            <if test="product != null">product = #{product}</if>
+            <if test="planId != null">and plan_id = #{planId}</if>
+            <if test="name != null">and name = #{name}</if>
+            <if test="sqPeople != null">and sq_people = #{sqPeople}</if>
+            <if test="sqStatus != null">and sq_status = #{sqStatus}</if>
+            <if test="shPeople != null">and sh_people = #{shPeople}</if>
+            <if test="shStatus != null">and sh_status = #{shStatus}</if>
+        </where>
+    </select>
+
+    <update id="update">
+        update production_plan set
+        <if test="shStatus != null">sh_status = #{shStatus},</if>
+        <if test="shYijian != null">sh_yijian = #{shYijian},</if>
+        sh_date = now()
+        where id = #{id};
+    </update>
+</mapper>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.kanojo.mapper.ba.OrderMapper">
+
+    <resultMap id="BaseResultMap" type="com.kanojo.domain.ba.Order">
+        <id property="id" column="id" jdbcType="INTEGER"/>
+        <result property="orderId" column="order_id" jdbcType="INTEGER"/>
+        <result property="name" column="name" jdbcType="VARCHAR"/>
+        <result property="money" column="money" jdbcType="DECIMAL"/>
+        <result property="sunbmitDate" column="sunbmit_date" jdbcType="TIMESTAMP"/>
+        <result property="applicationPeople" column="application_people" jdbcType="VARCHAR"/>
+        <result property="applicationDate" column="application_date" jdbcType="TIMESTAMP"/>
+        <result property="applicationStatus" column="application_status" jdbcType="INTEGER"/>
+        <result property="checkoutPeople" column="checkout_people" jdbcType="VARCHAR"/>
+        <result property="checkoutDate" column="checkout_date" jdbcType="TIMESTAMP"/>
+        <result property="checkoutStatus" column="checkout_status" jdbcType="INTEGER"/>
+        <result property="checkoutYijian" column="checkout_yijian" jdbcType="VARCHAR"/>
+    </resultMap>
+
+    <select id="getAll" resultType="com.kanojo.domain.ba.Order">
+        select * from carbon.`order`
+        <where>
+            <if test="orderId != null">order_id = #{orderId}</if>
+            <if test="name != null">and name like #{name}</if>
+            <if test="checkoutPeople != null">and checkout_people = #{checkoutPeople}</if>
+            <if test="applicationStatus != null">and application_status = #{applicationStatus}</if>
+            <if test="checkoutPeople != null">and checkout_people = #{checkoutPeople}</if>
+            <if test="checkoutStatus != null">and checkout_status = #{checkoutStatus}</if>
+        </where>
+    </select>
+
+    <update id="update">
+        update carbon.`order` set
+        <if test="checkoutStatus != null">checkout_status = #{checkoutStatus},</if>
+        <if test="checkoutYijian != null">checkout_yijian = #{checkoutYijian},</if>
+        checkout_date = now()
+        where id =#{id};
+    </update>
+</mapper>

@@ -4,7 +4,7 @@ server:
 spring:
 
   datasource: #数据库配置
-    url: jdbc:mysql://124.223.63.101:3306/mall?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true
+    url: jdbc:mysql://124.223.63.101:3306/carbon?useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&autoReconnect=true&useSSL=false&allowMultiQueries=true
     driver-class-name: com.mysql.cj.jdbc.Driver
     username: root
     password: woshidashuaibi
@@ -19,6 +19,7 @@ spring:
     multipart:
       max-file-size: 10MB
       max-request-size: 10MB
+
 mybatis:
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
